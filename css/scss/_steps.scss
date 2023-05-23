@@ -1,0 +1,84 @@
+#steps {
+	background-color: #659CE4;
+	color: white;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		@include respond-at(0px, $tablet)  {
+			display: grid;
+			row-gap: 2em;
+			justify-content: center;
+		}
+
+		.step_box {
+			box-sizing: border-box;	
+			width: 32em;
+
+			@include respond-at(null, $mobile) {
+				width: auto;
+				margin: 0 4em;
+			}
+			@include respond-at($mobile, $tablet) {
+				width: auto;
+				margin: 0 8em;
+			}
+			text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+			h3 {
+				font-size: 3em;
+				font-weight: bold;
+				margin-bottom: 1em;
+			}
+			p {
+				font-size: 1.8em;
+				line-height: 1.2em;
+				text-align: left;
+				font-weight: 300;
+				overflow-wrap: anywhere;
+				@include respond-at(0px, $tablet) {
+					font-size: 2.2em;
+					line-height: 1.2em;
+				}
+			}
+		}
+		.arrow {
+			width: 4em;
+			height: auto;
+			margin: auto 2em;
+			display: inline-block;
+			@include respond-at(0px, $tablet)  {
+				height: 4em;
+				width: auto;
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
+		}
+		
+		.arrow::before {
+			position: absolute;
+			left: auto;
+			width: 4em;
+			height: 4em;
+			border: 5px solid;
+			border-bottom: 0;
+			border-left: 0;
+			border-radius: 1px;
+			transform: rotate(45deg) translateX(-3em) translateY(3em);
+			@include respond-at(0px, $tablet)  {	
+				transform: rotate(135deg) translateX(1em) translateY(3em);
+			}
+			content: "";
+			filter: drop-shadow(0px 3px 6px 0px rgba(0, 0, 0, 0.16));
+		}
+
+		.btn {
+			display: none;
+			@include respond-at(0px, $tablet)  {
+				display: inline-block;
+				margin: 0 auto;
+				margin-top: 4em;
+			}
+		}
+	}
+
+}

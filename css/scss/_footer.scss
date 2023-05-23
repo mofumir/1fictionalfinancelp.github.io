@@ -1,0 +1,46 @@
+footer {
+	display: flex;
+	background-color: #1E2E43;
+	color: white;
+	justify-content: center;
+	padding: 4em;
+	
+	.logo {
+		margin: auto 4em;
+		@include respond-at(0px, $tablet)  {
+			content: url("../assets/logo_alt.png");
+			max-height: 16em;
+			min-width: 16em;
+		}
+	}
+	.container {
+		margin: auto 0em;
+		.row {
+			display: block;
+			box-sizing: content-box;
+			font-size: 1.6em;
+			text-align: left;
+			margin-bottom: 0.6em;
+			.cat {
+				font-weight: 700;
+				display: inline-block;
+				width: 5em;
+			}
+			.detail {
+				display: inline-block;
+				width: auto;
+				br {
+					display: none;
+				}
+				@include respond-at(null, 375px) {
+					span {
+						display: none;
+					}
+					br {
+						display: initial;	
+					}
+				}
+			}
+			}
+		}
+}

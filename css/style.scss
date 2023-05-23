@@ -1,0 +1,112 @@
+@import "scss/_reset";
+@import "scss/_variables";
+@import "scss/_mixin";
+
+/* CSS Document */
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	font-kerning: auto;
+}
+
+/* default setting */
+body {
+	font-family: Noto Sans CJK JP;
+	box-sizing: border-box;
+	width: 100%;
+	font-size: 1em;
+	@include respond-at(null, $mobile) {
+		font-size: 0.6em;
+	}
+	@include respond-at($mobile, $tablet) {
+		font-size: 0.8em;
+	}
+	text-align: justify;
+}
+
+h2 {
+	font-size: 4.8em;
+	font-weight: bolder;
+	br {
+			display: none;
+		}
+		@include respond-at(null, $mobile) {
+			br {
+				display: inline;
+			}
+		}
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	margin-left: 9em;
+	margin-right: 9em;
+	@include respond-at(0px, $tablet)  {
+		margin-left: 2em;
+		margin-right: 2em;
+		justify-content: center;
+	}
+	p { 
+		font-size: 2em; 
+	}
+	h3 { 
+		font-size: 4em; 
+		font-weight: bold; 
+		
+	}
+}
+
+.logo {
+	max-height: 10em;
+	max-width: 30em;
+}
+
+section {
+	display: block;
+	justify-content: center;
+	text-align: center;
+	padding: 10em 0;
+	h2 {
+		margin-bottom: 50px;
+		font-weight: bold;
+	}
+}
+
+.btn {
+	display: inline-block;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	background-color: orange;
+	border-radius: 10em;
+	border: solid white 0.5em;
+	width: 32em;
+	font-size: 1em;
+	transition: all 0.2s;
+	clear: both;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+
+	span {
+		font-size: 2.6em;
+		font-weight: bold;
+		line-height: 2.4em;
+		vertical-align: middle;
+		color: white;
+	}
+}
+.btn:hover {
+	transform: scale(1.05) translateY(-0.05em);
+}
+
+// partials
+
+@import "scss/_firstview";
+@import "scss/_bodycopy";
+@import "scss/_steps";
+@import "scss/_reviews";
+@import "scss/_plans";
+@import "scss/_contactform";
+@import "scss/_footer";

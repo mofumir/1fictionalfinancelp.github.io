@@ -1,0 +1,136 @@
+#bodycopy {
+	height: auto;
+	.wrapper {
+		display: block;
+		margin-left: 16em;
+		margin-right: 16em;
+		@include respond-at(null, $mobile)  {
+			margin-left: 3em;
+			margin-right: 3em;
+		}
+		@include respond-at($mobile, $tablet)  {
+			margin-left: 6em;
+			margin-right: 6em;
+		}
+	}
+	.row-wrapper{
+		display: flex;
+		justify-content: space-between;
+		.spacer {
+			display: none;
+		}
+		@include respond-at(0px, $tablet)  {
+			display: grid;
+			justify-content: normal;
+			.spacer {
+				display: block;
+				height: 3em;
+			}
+		}
+	}
+	.marginplus {
+		height: 16em;
+		margin: 5em 0px;
+		@include respond-at(0px, $tablet)  {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	
+	.arrow {
+		left: auto;
+		right: auto;
+		text-align: center;
+		justify-content: center;
+		width: 5em;
+		height: 10em;
+		position: relative;
+		background-color: #AFCCF2;
+		filter: drop-shadow(0px 3px 6px 0px rgba(0, 0, 0, 0.16));
+	}
+	
+	.arrow::before {
+		position: absolute;
+		top: 8em;
+		left: -5.5em;
+		width: 0;
+		height: 0;
+		content: "";
+		border-top: 8em solid #AFCCF2;
+		border-left: 8em solid transparent;
+		border-right: 8em solid transparent;
+		filter: drop-shadow(0px 3px 6px 0px rgba(0, 0, 0, 0.16));
+	}
+		
+	
+	.box {
+			display: block;
+			padding: 5em 3%;
+			background-color: #AFCCF2;
+			border-radius: 45px;
+			width: 25%;
+			box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+			&.solution {
+				background-color: orange;
+				color: white;
+				box-sizing: border-box;
+				padding: 4em;
+				width: 100%;
+				margin-bottom: 10em;
+			}
+
+			p	{
+				font-size: 2.2em;
+				font-weight: bold;
+				margin-top: 0.8em;
+				
+			}
+			@include respond-at(0px, $tablet)  {
+				$img_size: 9em;
+				display: grid;
+				padding: 2em 5em;
+				width: auto;
+				float: none;
+				width: 100%;
+				max-width: $tablet;
+				box-sizing: border-box;
+				border-radius: 47px;
+				grid-template-columns: $img_size+2em 2fr;
+
+				
+				img {
+					grid-column: 1;
+					width: $img-size;
+					height: $img-size;
+					margin-right: 2em;
+					grid-row: 1;
+				}
+				p {
+					font-size: 2.1em;
+					line-height: 1.1em;
+					grid-row: 1;
+					width: auto;
+					margin-top: auto;
+					margin-bottom: auto;
+					br {
+						display: none;
+					}
+					text-align: left;
+				}
+
+				&.solution {
+					padding: 2em 5em;
+					border-radius: 47px;
+					margin-bottom: 4em;
+					p {
+						br {
+							display: inline;
+						}
+					}
+					
+				}
+			}
+			
+		}
+	}
